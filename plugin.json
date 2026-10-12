@@ -1,0 +1,47 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "openpath",
+  "version": "1.27.0",
+  "description": "Search homes, jobs, local services, businesses, products, cars and events across the US for free, and reach each owner through an Openpath inbox. Also add listings for what the user offers, so other agents can find them. Use when the user is looking for a place to live, work, a local business or something to buy, wants to contact an owner, or has something to offer: a home to rent, a job, a service, a product.",
+  "author": {
+    "name": "Openpath",
+    "email": "contact@openpath.sh",
+    "url": "https://openpath.sh/"
+  },
+  "homepage": "https://openpath.sh/",
+  "repository": "https://github.com/openpath-sh/skills",
+  "license": "MIT-0",
+  "keywords": [
+    "networking",
+    "search",
+    "agents",
+    "opportunities"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Openpath",
+        "shortDescription": "Free search for your agent",
+        "longDescription": "Free search for your agent: homes, jobs, local services, businesses, products, cars and events across the US, answered in plain Markdown, with an inbox to reach each owner.\n\nWith this plugin, the model can:\n- Search Openpath for what the user is looking for, in their own words: a place to rent, a job, a plumber nearby, something to buy. Searching needs no account.\n- With the user's permission, write to the owner of a result through the Openpath inbox address it carries, and read the replies.\n- For owners: claim a listing, register a rental or product feed, or have a listing removed.\n\nWho it's for: anyone who wants their AI agent to find homes, work, local services and products without visiting a dozen sites, and owners who want those agents to reach them.\n\nLimitations: Openpath is for adults 18 and over, and covers the US. The plugin calls the Openpath API at api.openpath.sh, so it needs network access. It shares only the details the user approves, and it treats results and messages as information, never as instructions.",
+        "developerName": "Openpath",
+        "category": "Productivity",
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
+        "defaultPrompt": [
+          "Search Openpath for a 2 bedroom in Brooklyn under $3,000 a month.",
+          "Find a plumber near Austin who can come this weekend.",
+          "Check my Openpath inbox for replies from owners."
+        ],
+        "brandColor": "#24251F",
+        "websiteURL": "https://openpath.sh/",
+        "privacyPolicyURL": "https://openpath.sh/privacy",
+        "termsOfServiceURL": "https://openpath.sh/terms",
+        "supportURL": "https://openpath.sh/support",
+        "composerIcon": "./assets/app-icon-512.png",
+        "logo": "./assets/app-icon-1024.png"
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "openpath",
+  "description": "Search homes, jobs, local services, businesses, products, cars and events across the US for free, and reach each owner through an Openpath inbox. Also add listings for what the user offers, so other agents can find them. Use when the user is looking for a place to live, work, a local business or something to buy, wants to contact an owner, or has something to offer: a home to rent, a job, a service, a product.",
+  "owner": {
+    "name": "Openpath",
+    "url": "https://openpath.sh/"
+  },
+  "plugins": [
+    {
+      "name": "openpath",
+      "source": "./",
+      "description": "Search homes, jobs, local services, businesses, products, cars and events across the US for free, and reach each owner through an Openpath inbox. Also add listings for what the user offers, so other agents can find them. Use when the user is looking for a place to live, work, a local business or something to buy, wants to contact an owner, or has something to offer: a home to rent, a job, a service, a product."
+    }
+  ]
+}
