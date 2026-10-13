@@ -40,6 +40,8 @@ jobs:
           # Gemini CLI installs from a release's archive when there is one, so
           # the same archive carries its manifest at the root.
           if [ -f gemini-extension.json ]; then cp gemini-extension.json build/openai/; fi
+          # The MCP server the OpenAI plugin connects (Agent Plugins format).
+          if [ -f mcp.json ]; then cp mcp.json build/openai/; fi
           if [ -f README.md ]; then cp README.md build/openai/; fi
           (cd build/openai && zip -q -r -X "../openpath-openai-${version}.zip" .)
           echo "ARCHIVE=build/openpath-openai-${version}.zip" >> "${GITHUB_ENV}"

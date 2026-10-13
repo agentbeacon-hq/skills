@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "openpath",
-  "version": "1.28.1",
+  "version": "1.28.2",
   "description": "Free live listings across the US, from openpath.sh - jobs, local businesses and services, homes, products, cars and events. Use this when the user wants something they can act on now (a job to apply to, a plumber to call, a place to eat, a home to rent) rather than web pages about it. Each result is one listing in plain Markdown with its facts and its action - an Apply, Phone, Website or Buy line, and an inbox address to reach the owner. Use web search instead for news, research or general questions. Also use it when the user wants to message the owner of a result, or to offer something (a home to rent, a job, a service, a product) so other agents can find it.",
   "author": {
     "name": "Openpath",
@@ -12,10 +12,11 @@
   "repository": "https://github.com/openpath-sh/skills",
   "license": "MIT-0",
   "keywords": [
-    "networking",
     "search",
-    "agents",
-    "opportunities"
+    "jobs",
+    "local-business",
+    "listings",
+    "agents"
   ],
   "extensions": {
     "com.openai": {
@@ -30,9 +31,9 @@
           "Write"
         ],
         "defaultPrompt": [
-          "Search Openpath for a 2 bedroom in Brooklyn under $3,000 a month.",
-          "Find a plumber near Austin who can come this weekend.",
-          "Check my Openpath inbox for replies from owners."
+          "Find software engineer jobs in Austin, TX with the apply links.",
+          "Find a plumber near Austin, TX I can call today.",
+          "Find taco places in Austin, TX and how to reach them."
         ],
         "brandColor": "#24251F",
         "websiteURL": "https://openpath.sh/",
@@ -41,6 +42,64 @@
         "supportURL": "https://openpath.sh/support",
         "composerIcon": "./assets/app-icon-512.png",
         "logo": "./assets/app-icon-1024.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Find jobs with apply links",
+              "prompt": "Find software engineer jobs in Austin, TX and give me the apply links.",
+              "tools_triggered": "search",
+              "expected_behavior": "Lists current postings in or near Austin, each with its pay where known and its Apply link."
+            },
+            {
+              "description": "Find a local service to call",
+              "prompt": "Find a plumber near Austin, TX I can call today.",
+              "tools_triggered": "search",
+              "expected_behavior": "Lists Austin plumbers with their address and phone number, and website where known."
+            },
+            {
+              "description": "Find a place to eat",
+              "prompt": "Find taco places in Austin, TX and tell me how to reach them.",
+              "tools_triggered": "search",
+              "expected_behavior": "Lists taco restaurants in Austin with their address and phone or website."
+            },
+            {
+              "description": "Read one result in full",
+              "prompt": "Find data engineer jobs in Austin, TX, then show me the full details of the first one.",
+              "tools_triggered": "search, get_listing",
+              "expected_behavior": "Searches, then reads the first result in full and shows its details and Apply link."
+            },
+            {
+              "description": "Handle no matches",
+              "prompt": "Find a 2 bedroom apartment for rent in Brooklyn under $3,000 a month.",
+              "tools_triggered": "search",
+              "expected_behavior": "Reports that no matching listings were found, without inventing any."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Not a listing request",
+              "prompt": "What's the weather in Austin today?"
+            },
+            {
+              "description": "No payments",
+              "prompt": "Buy the first product you find with my credit card."
+            },
+            {
+              "description": "No applications on the user's behalf",
+              "prompt": "Apply to this job for me with my resume."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "Openpath does not sell products or process payments. Results link to the seller, employer or business."
+      },
+      "publication": {
+        "countries": [
+          "US"
+        ],
+        "release_notes": "Openpath 1.28.2: search live US listings (jobs, local businesses and services) and read a listing in full through Openpath's MCP server, which needs no sign-in, plus the Openpath skill."
       }
     }
   }
