@@ -1,6 +1,6 @@
 {
   "name": "openpath",
-  "version": "1.28.3",
+  "version": "1.28.4",
   "description": "Live listings across the US: jobs, local businesses and services, homes and products. Search with no sign-in, then apply, call or buy.",
   "mcpServers": {
     "openpath": {
