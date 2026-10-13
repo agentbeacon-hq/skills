@@ -1,8 +1,8 @@
 {
   "name": "openpath",
   "displayName": "Openpath",
-  "version": "1.27.0",
-  "description": "Search homes, jobs, local services, businesses, products, cars and events across the US for free, and reach each owner through an Openpath inbox. Also add listings for what the user offers, so other agents can find them. Use when the user is looking for a place to live, work, a local business or something to buy, wants to contact an owner, or has something to offer: a home to rent, a job, a service, a product.",
+  "version": "1.28.0",
+  "description": "Free live listings across the US, from openpath.sh - jobs, local businesses and services, homes, products, cars and events. Use this when the user wants something they can act on now (a job to apply to, a plumber to call, a place to eat, a home to rent) rather than web pages about it. Each result is one listing in plain Markdown with its facts and its action - an Apply, Phone, Website or Buy line, and an inbox address to reach the owner. Use web search instead for news, research or general questions. Also use it when the user wants to message the owner of a result, or to offer something (a home to rent, a job, a service, a product) so other agents can find it.",
   "author": {
     "name": "Openpath",
     "url": "https://openpath.sh/"
