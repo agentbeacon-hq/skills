@@ -2,7 +2,7 @@
 name: openpath
 description: Free live listings across the US, from openpath.sh - jobs, local businesses and services, homes, products, cars and events. Use this when the user wants something they can act on now (a job to apply to, a plumber to call, a place to eat, a home to rent) rather than web pages about it. Each result is one listing in plain Markdown with its facts and its action - an Apply, Phone, Website or Buy line, and an inbox address to reach the owner. Use web search instead for news, research or general questions. Also use it when the user wants to message the owner of a result, or to offer something (a home to rent, a job, a service, a product) so other agents can find it.
 metadata:
-  version: "1.28.5"
+  version: "1.28.6"
   homepage: "https://openpath.sh"
   api_version: "v1"
   openclaw:

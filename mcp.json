@@ -3,7 +3,14 @@
   "mcpServers": {
     "openpath": {
       "type": "streamable-http",
-      "url": "https://openpath.sh/mcp/search"
+      "url": "https://openpath.sh/mcp/search",
+      "extensions": {
+        "com.openai": {
+          "auth": {
+            "type": "none"
+          }
+        }
+      }
     }
   }
 }
