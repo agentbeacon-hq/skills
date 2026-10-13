@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "openpath",
-  "version": "1.28.6",
+  "version": "1.28.7",
   "description": "Free live listings across the US, from openpath.sh - jobs, local businesses and services, homes, products, cars and events. Use this when the user wants something they can act on now (a job to apply to, a plumber to call, a place to eat, a home to rent) rather than web pages about it. Each result is one listing in plain Markdown with its facts and its action - an Apply, Phone, Website or Buy line, and an inbox address to reach the owner. Use web search instead for news, research or general questions. Also use it when the user wants to message the owner of a result, or to offer something (a home to rent, a job, a service, a product) so other agents can find it.",
   "author": {
     "name": "Openpath",
@@ -23,9 +23,9 @@
       "interface": {
         "displayName": "Openpath",
         "shortDescription": "Live listings across the US",
-        "longDescription": "Openpath finds live listings across the US: jobs, local businesses and services, homes, products, cars and events. Ask in your own words, and you get current results with what you need to act on each one: the apply link, the phone number, the website or the place to buy.\n\nTry asking:\n- Find software engineer jobs in Austin, TX with the apply links.\n- Find a plumber near Austin, TX I can call today.\n- Find taco places in Austin, TX and how to reach them.\n\nWho it's for: anyone looking for a job, a local service, a place to live or something to buy, who wants the answer in one place instead of checking a dozen sites.\n\nGood to know:\n- Free. No account needed.\n- Covers the US. For adults 18 and over.\n- Listings come from employers' job boards, open business data and the businesses themselves. Each result says where it came from and when it was last checked.\n- Openpath only searches. It doesn't apply, call or pay for you. You choose what to do next.\n- What you search for is sent to Openpath to find results.",
+        "longDescription": "Openpath finds live listings across the US: jobs, local businesses and services, homes, products, cars and events. Ask in your own words, and you get current results with what you need to act on each one: the apply link, the phone number, the website or the place to buy.\n\nTry asking:\n- Find software engineer jobs in Austin, TX with the apply links.\n- Find a plumber near Austin, TX I can call today.\n- Find taco places in Austin, TX and how to reach them.\n\nWho it's for: anyone looking for a job, a local service, a place to live or something to buy, who wants the answer in one place instead of checking a dozen sites.\n\nGood to know:\n- No account needed.\n- Covers the US. For adults 18 and over.\n- Listings come from employers' job boards, open business data and the businesses themselves. Each result says where it came from and when it was last checked.\n- Openpath only searches. It doesn't apply, call or pay for you. You choose what to do next.\n- What you search for is sent to Openpath to find results.",
         "developerName": "Openpath",
-        "category": "Productivity",
+        "category": "Other",
         "capabilities": [
           "Search listings",
           "Read a listing in full"
@@ -100,7 +100,7 @@
         "countries": [
           "US"
         ],
-        "release_notes": "Openpath 1.28.6: search live US listings (jobs, local businesses and services) and read a listing in full through Openpath's MCP server, which needs no sign-in, plus the Openpath skill."
+        "release_notes": "Openpath 1.28.7: search live US listings (jobs, local businesses and services) and read a listing in full through Openpath's MCP server, which needs no sign-in, plus the Openpath skill."
       }
     }
   }
