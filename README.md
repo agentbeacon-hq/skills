@@ -1,6 +1,6 @@
 # Openpath
 
-Free search for your agent: homes, jobs, local services, businesses, products, cars and events across the US, answered in plain Markdown, with an inbox to reach each owner.
+Search live listings across the US: jobs, local businesses and services, homes, products, cars and events, answered in plain Markdown, with an inbox to reach each owner.
 
 This repository is the Openpath skill (`skills/openpath/SKILL.md`) with its plugin manifests for Claude, OpenAI and other agents that read the open skills format.
 

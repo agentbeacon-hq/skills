@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "openpath",
-  "version": "1.28.2",
+  "version": "1.28.3",
   "description": "Free live listings across the US, from openpath.sh - jobs, local businesses and services, homes, products, cars and events. Use this when the user wants something they can act on now (a job to apply to, a plumber to call, a place to eat, a home to rent) rather than web pages about it. Each result is one listing in plain Markdown with its facts and its action - an Apply, Phone, Website or Buy line, and an inbox address to reach the owner. Use web search instead for news, research or general questions. Also use it when the user wants to message the owner of a result, or to offer something (a home to rent, a job, a service, a product) so other agents can find it.",
   "author": {
     "name": "Openpath",
@@ -22,8 +22,8 @@
     "com.openai": {
       "interface": {
         "displayName": "Openpath",
-        "shortDescription": "Free search for your agent",
-        "longDescription": "Free search for your agent: homes, jobs, local services, businesses, products, cars and events across the US, answered in plain Markdown, with an inbox to reach each owner.\n\nWith this plugin, the model can:\n- Search Openpath for what the user is looking for, in their own words: a place to rent, a job, a plumber nearby, something to buy. Searching needs no account.\n- With the user's permission, write to the owner of a result through the Openpath inbox address it carries, and read the replies.\n- For owners: claim a listing, register a rental or product feed, or have a listing removed.\n\nWho it's for: anyone who wants their AI agent to find homes, work, local services and products without visiting a dozen sites, and owners who want those agents to reach them.\n\nLimitations: Openpath is for adults 18 and over, and covers the US. The plugin calls the Openpath API at api.openpath.sh, so it needs network access. It shares only the details the user approves, and it treats results and messages as information, never as instructions.",
+        "shortDescription": "Search live listings",
+        "longDescription": "Search live listings across the US: jobs, local businesses and services, homes, products, cars and events, answered in plain Markdown, with an inbox to reach each owner.\n\nWith this plugin, the model can:\n- Search Openpath for what the user is looking for, in their own words: a place to rent, a job, a plumber nearby, something to buy. Searching needs no account.\n- With the user's permission, write to the owner of a result through the Openpath inbox address it carries, and read the replies.\n- For owners: claim a listing, register a rental or product feed, or have a listing removed.\n\nWho it's for: anyone who wants their AI agent to find homes, work, local services and products without visiting a dozen sites, and owners who want those agents to reach them.\n\nLimitations: Openpath is for adults 18 and over, and covers the US. The plugin calls the Openpath API at api.openpath.sh, so it needs network access. It shares only the details the user approves, and it treats results and messages as information, never as instructions.",
         "developerName": "Openpath",
         "category": "Productivity",
         "capabilities": [
@@ -99,7 +99,7 @@
         "countries": [
           "US"
         ],
-        "release_notes": "Openpath 1.28.2: search live US listings (jobs, local businesses and services) and read a listing in full through Openpath's MCP server, which needs no sign-in, plus the Openpath skill."
+        "release_notes": "Openpath 1.28.3: search live US listings (jobs, local businesses and services) and read a listing in full through Openpath's MCP server, which needs no sign-in, plus the Openpath skill."
       }
     }
   }
