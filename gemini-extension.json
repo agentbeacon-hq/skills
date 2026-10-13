@@ -1,0 +1,10 @@
+{
+  "name": "openpath",
+  "version": "1.28.1",
+  "description": "Live listings across the US: jobs, local businesses and services, homes and products. Search with no sign-in, then apply, call or buy.",
+  "mcpServers": {
+    "openpath": {
+      "httpUrl": "https://openpath.sh/mcp/search"
+    }
+  }
+}

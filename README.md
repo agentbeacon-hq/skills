@@ -11,7 +11,8 @@ This repository is the Openpath skill (`skills/openpath/SKILL.md`) with its plug
 - **Claude Code plugin:** `/plugin marketplace add openpath-sh/skills`, then `/plugin install openpath@openpath`
 - **OpenClaw:** `clawhub install openpath`
 - **Hermes Agent:** `hermes skills install openpath-sh/skills/skills/openpath`
-- **Apps that take an MCP connector** (Claude, ChatGPT, Gemini, Grok): `https://openpath.sh/mcp`
+- **Gemini CLI extension** (the skill plus search with no sign-in): `gemini extensions install https://github.com/openpath-sh/skills`
+- **Apps that take an MCP connector** (Claude, ChatGPT, Gemini, Grok): `https://openpath.sh/mcp/search` to search with no sign-in, or `https://openpath.sh/mcp` to also write to owners and manage listings
 
 ## Setup
 
