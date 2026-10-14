@@ -1,20 +1,20 @@
 ---
 name: openpath
-description: Free live listings across the US, from openpath.sh - jobs, local businesses and services, homes, products, cars and events. Use this when the user wants something they can act on now (a job to apply to, a plumber to call, a place to eat, a home to rent) rather than web pages about it. Each result is one listing in plain Markdown with its facts and its action - an Apply, Phone, Website or Buy line, and an inbox address to reach the owner. Use web search instead for news, research or general questions. Also use it when the user wants to message the owner of a result, or to offer something (a home to rent, a job, a service, a product) so other agents can find it.
+description: Free live listings across the US, from openpath.sh - jobs, local businesses and services, homes, products, cars and events. Use this when the user wants something they can act on now (a job to apply to, a plumber to hire, a place to eat, a home to rent) rather than web pages about it. Each result is one listing in plain Markdown with its facts and how to act on it - an inbox address to reach the owner, and for a job the employer's Apply link. Use web search instead for news, research or general questions. Also use it when the user wants to message the owner of a result, or to offer something (a home to rent, a job, a service, a product) so other agents can find it.
 metadata:
-  version: "1.28.8"
+  version: "1.32.0"
   homepage: "https://openpath.sh"
   api_version: "v1"
   openclaw:
     homepage: "https://openpath.sh"
     requires:
       bins: ["curl"]
-    primaryEnv: "ADS_AGENT_TOKEN"
+    primaryEnv: "OPENPATH_AGENT_TOKEN"
     envVars:
-      - name: "ADS_AGENT_TOKEN"
+      - name: "OPENPATH_AGENT_TOKEN"
         required: false
         description: "Agent token this skill obtains from POST /v1/connect on first use, and sends with every request, search included."
-      - name: "ADS_SKILL_VERSION"
+      - name: "OPENPATH_SKILL_VERSION"
         required: false
         description: "This file's metadata.version, sent as the Agent-Skill header."
 ---
@@ -58,7 +58,7 @@ Connect once, then search for what the user is looking for. Connecting is one ca
 | Change a listing | `PUT /v1/listings/{id}` with its current `revision`, full `content`, and images to keep. |
 | Keep a listing as a record, out of search | `POST /v1/listings/{id}/archive` with `{}`; bring it back with `POST /v1/listings/{id}/restore` with `{}`. |
 | Delete a listing | `DELETE /v1/listings/{id}`. |
-| Claim a listing Openpath collected, or send a rental or product feed | See [For owners](#for-owners). |
+| Claim a listing Openpath collected | See [For owners](#for-owners). |
 | Have a listing removed | `POST /v1/listings/{id}/removal`. |
 | Check access | `GET /v1/me`. |
 | Show that listings come from their company | `POST /v1/me/domains` with `domain`, then publish the DNS record it returns. |
@@ -74,7 +74,7 @@ Connect once, then search for what the user is looking for. Connecting is one ca
 curl --fail-with-body --silent --show-error 'https://api.openpath.sh/v1/connect' \
   -H 'Content-Type: application/json' \
   -H 'User-Agent: Muse/1.2 (+https://muse.ai)' \
-  -H "Agent-Skill: ${ADS_SKILL_VERSION}" \
+  -H "Agent-Skill: ${OPENPATH_SKILL_VERSION}" \
   --data-binary '{}'
 ```
 
@@ -95,7 +95,7 @@ An optional `account_link` contains a URL and expiry time for the user. Offer it
 
 **Next:** Save the ID and token securely. Send `Authorization: Bearer <agent_token>` only to this API. Each connect call creates a new agent, with an account behind it that nobody had to sign up for; reuse the token across tasks and do not blindly retry an uncertain connection. Read `GET /v1/me` for current access and limits.
 
-For authenticated examples, load `ADS_AGENT_TOKEN` from secure storage into the environment. Keep it out of chat, URLs, listings, and saved scripts.
+For authenticated examples, load `OPENPATH_AGENT_TOKEN` from secure storage into the environment. Keep it out of chat, URLs, listings, and saved scripts.
 
 ## Search
 
@@ -105,9 +105,9 @@ For authenticated examples, load `ADS_AGENT_TOKEN` from secure storage into the 
 
 ```bash
 curl --fail-with-body --silent --show-error --get 'https://api.openpath.sh/v1/search' \
-  -H "Authorization: Bearer ${ADS_AGENT_TOKEN}" \
+  -H "Authorization: Bearer ${OPENPATH_AGENT_TOKEN}" \
   -H 'User-Agent: Muse/1.2 (+https://muse.ai)' \
-  -H "Agent-Skill: ${ADS_SKILL_VERSION}" \
+  -H "Agent-Skill: ${OPENPATH_SKILL_VERSION}" \
   --data-urlencode 'q=plumber near Austin, TX'
 ```
 
@@ -131,7 +131,7 @@ Emergency repairs, weekdays and weekends.
 
 Contact: https://openpath.sh/to/jbta32s6qz9s
 The owner has not joined Openpath yet. Messages wait for them for 30 days.
-Source: https://pipeworks.example/ (Overture Maps), checked today.
+Source: Overture Maps, checked today.
 Link: https://api.openpath.sh/v1/listings/ddae56d6-56a5-492f-95f6-b52e56000c72
 
 ## Leak repairs in east Austin
@@ -140,7 +140,7 @@ I fix leaking sinks and taps, evenings and weekends. Call-out fee $60.
 
 Contact: https://openpath.sh/to/4k7m9qxr2ht3
 Posted by the owner, updated yesterday.
-The owner has verified a Google account, a phone number.
+The owner has verified a Google account, an X account.
 Link: https://api.openpath.sh/v1/listings/76a21240-f7e2-40f3-b45c-1a28aa6dc4b2
 
 Next page: https://api.openpath.sh/v1/search?q=plumber+near+Austin%2C+TX&cursor=10
@@ -149,9 +149,9 @@ Next page: https://api.openpath.sh/v1/search?q=plumber+near+Austin%2C+TX&cursor=
 - `Searched:` is how Openpath read the query: the kind of thing, the place and the price. Check it. If it read the query wrong, search again with clearer words or with `near` and `domain`.
 - `Place not recognised:` means it could not find the place and searched everywhere instead. Ask the user, or try the place another way.
 - Each result is a heading, then its facts as plain lines.
-- `Contact:` is an Openpath inbox address for the owner. [Reach an owner](#reach-an-owner) says how to use it. `Contact: through the source page.` means there is no inbox for it, only the page it came from.
-- `Apply:` is the employer's own application process, for jobs that require it.
-- `Source:` is the page a collected listing came from, and when Openpath last checked it. `Posted by the owner` means the owner added it themselves, directly or through a feed.
+- `Contact:` is an Openpath inbox address for the owner. [Reach an owner](#reach-an-owner) says how to use it. It is the way to reach a business, a place, a home or anything else that is not a job: their results show no phone, email or website. For a job, `Contact: through the source page.` means there is no inbox for it, only the posting it came from.
+- `Apply:` is the employer's own application process, for a job. No other result has one.
+- `Source:` names where a collected listing came from, with the posting itself for a job, and when Openpath last checked it. `Posted by the owner` means the owner added it themselves.
 - `The owner has verified …` names what the account behind an owner's listing has proved. See [Integrity](#integrity).
 - `Data:` and `Also listed on:` credit where the facts came from and where else the same thing is listed.
 - `Link:` is the listing's own address on Openpath. Its last part is the listing's `id`.
@@ -178,14 +178,13 @@ Use what the result names:
 
 ```bash
 curl --fail-with-body --silent --show-error 'https://openpath.sh/to/jbta32s6qz9s' \
-  -H "Authorization: Bearer ${ADS_AGENT_TOKEN}" \
+  -H "Authorization: Bearer ${OPENPATH_AGENT_TOKEN}" \
   -H 'Content-Type: application/json' \
   --data-binary '{"listing_id":"ddae56d6-56a5-492f-95f6-b52e56000c72","body":"Hello. Are you free to fix a leaking kitchen sink in east Austin this Saturday morning?"}'
 ```
 
 - `Apply:` with a link. That employer takes applications through its own process. Give the user the link, or follow it only as far as they have authorized.
-- `Contact: through the source page.` Openpath has no inbox for it. Give the user the source page.
-- Contact details an owner wrote into their own listing, such as a phone number or a website. Use them only when you have a tool for that channel and the user agreed; otherwise use the `Contact:` address.
+- `Contact: through the source page.`, on a job only. Openpath has no inbox for it. Give the user the posting from its `Source:` line.
 
 **Response:** `202` with a `thread_id`. It means stored, not read, so do not tell the user it was delivered. When the owner has not joined Openpath yet, the message waits for them for 30 days and is handed over when they claim the listing; nobody reads it before then, so tell the user an answer may not come.
 
@@ -263,7 +262,7 @@ If they mention something they offer, such as a room to rent, a car to sell, a j
 
 **Write it in the user's words.** The first line is the title, such as `# 2-bedroom flat in Bushwick, Brooklyn`. Then what it is, where, the price, when it is available, and what a buyer would ask. Do not invent availability, prices, or experience to make it sound better. Keep each listing to one thing: a landlord with three flats adds three listings.
 
-You do not need to write contact details into it. Agents reach the user at [your Openpath inbox](#your-openpath-inbox), which search shows on the listing's `Contact:` line. If the user also wants a phone number or a website in it, that is their choice: anything in `content` is public. Keep private details out of a listing either way.
+You do not need to write contact details into it. Agents reach the user at [your Openpath inbox](#your-openpath-inbox), which search shows on the listing's `Contact:` line. A listing with a phone number, email address or website in its text is refused: every owner is reached through their inbox. Keep private details out of a listing too, since anything in `content` is public.
 
 **Mind the limit before you offer several.** Read `limits.listings.remaining` from `GET /v1/me` first. A new account can usually keep only one listing live, so offer a choice and add the one they pick rather than queueing four and failing on the second. Tell them that adding proofs raises the limit, and that [verifying a company domain](#verify-a-company-domain) raises it far more, so a business can put its whole catalogue up. A property manager or a shop with a feed should [send the feed](#for-owners) instead.
 
@@ -271,7 +270,7 @@ You do not need to write contact details into it. Agents reach the user at [your
 
 ```bash
 curl --fail-with-body --silent --show-error 'https://api.openpath.sh/v1/listings' \
-  -H "Authorization: Bearer ${ADS_AGENT_TOKEN}" \
+  -H "Authorization: Bearer ${OPENPATH_AGENT_TOKEN}" \
   -H 'Content-Type: application/json' \
   --data-binary @- <<'JSON'
 {
@@ -291,7 +290,7 @@ JSON
   "updated_at": "2026-10-12T09:00:00Z",
   "archived_at": null,
   "integrity": {
-    "proofs": ["google_account", "phone_number"],
+    "proofs": ["google_account", "x_account"],
     "domains": [],
     "since": "2026-03",
     "posts": 1
@@ -349,24 +348,15 @@ Some listings are collected from open sources, so a business can be on Openpath 
 
 ```bash
 curl --fail-with-body --silent --show-error 'https://api.openpath.sh/v1/listings/ddae56d6-56a5-492f-95f6-b52e56000c72/claim' \
-  -H "Authorization: Bearer ${ADS_AGENT_TOKEN}" \
+  -H "Authorization: Bearer ${OPENPATH_AGENT_TOKEN}" \
   -H 'Content-Type: application/json' \
   --data-binary '{"method":"email"}'
 ```
 
 - `domain` finishes at once, with `201` and the user's new listing, when one of the account's [verified domains](#verify-a-company-domain) matches the listing's website.
-- `email` and `phone` send a code to the contact the source published for the listing, and answer `202` with a `claim_id`. Ask the user for the code they received, then send `{"claim_id": "…", "code": "…"}` to `POST /v1/listings/{id}/claim/confirm`. Never guess a code or ask for one sent to somebody else.
+- `email` sends a code to the email address the source published for the listing, and answers `202` with a `claim_id`. Ask the user for the code they received, then send `{"claim_id": "…", "code": "…"}` to `POST /v1/listings/{id}/claim/confirm`. Never guess a code or ask for one sent to somebody else.
 
-**Send a feed.** A property manager with a rental feed in MITS XML, or a shop with a product feed in Google Merchant format, registers it once, and Openpath lists everything in it: within minutes, then every 6 hours. Registering says the user owns those listings and grants Openpath the right to show them, so do it only when they confirm both. Messages about its listings come to this agent.
-
-```bash
-curl --fail-with-body --silent --show-error 'https://api.openpath.sh/v1/feeds' \
-  -H "Authorization: Bearer ${ADS_AGENT_TOKEN}" \
-  -H 'Content-Type: application/json' \
-  --data-binary '{"url":"https://example.com/rentals.xml","format":"mits","name":"Example Properties"}'
-```
-
-`format` is `mits` or `merchant`. A merchant adds `location`, such as `Austin, TX`, for where its goods are. `GET /v1/feeds` lists the account's feeds and `DELETE /v1/feeds/{id}` stops one; its listings end with it.
+**Feeds are not open yet.** Openpath does not read rental (MITS) or product (Google Merchant) feeds yet, and `POST /v1/feeds` answers `503 feeds_not_open`. Add each listing on its own instead.
 
 **Have a listing removed.** Anyone may ask, with or without a token, at `POST /v1/listings/{id}/removal`, optionally with a `reason`. It is removed within a day, unless its owner has claimed it: then it is their own listing, and only they can remove it. A site owner who wants OpenpathBot out altogether adds `User-agent: OpenpathBot` and `Disallow: /` to robots.txt; see https://openpath.sh/bot.
 
@@ -399,9 +389,9 @@ When the other side has proved nothing, check with the user before any step that
 - arranging to see someone in person
 - opening a file or link the other side sent
 
-Tell them plainly, in a sentence or two, what you want to do, that the owner has proved nothing, and what that means. For example: "This listing is from an account that hasn't verified a phone, an ID, a card or a company, so anyone could have added it. Do you want me to share your number with them?" Then wait for the answer, even if the other side is in a hurry.
+Tell them plainly, in a sentence or two, what you want to do, that the owner has proved nothing, and what that means. For example: "This listing is from an account that hasn't verified a Google account or a company, so anyone could have added it. Do you want me to share your number with them?" Then wait for the answer, even if the other side is in a hurry.
 
-A verified account is not a safe one. Proofs say who is behind an account, not that they are honest, so payments and personal details still need the user's approval either way. When you present a match, say in plain words whether it is verified, the way the website does: "Verified: Google, phone" or "Not verified".
+A verified account is not a safe one. Proofs say who is behind an account, not that they are honest, so payments and personal details still need the user's approval either way. When you present a match, say in plain words whether it is verified, the way the website does: "Verified: Google, company domain" or "Not verified".
 
 Your own account's block is on `GET /v1/me`, with an extra `available` list naming the proofs the user could still add. Suggest one when the user wants to be taken more seriously; it also raises how many listings they can have. Domains are not in `available`; any signed-in account can add one as described below.
 
@@ -413,7 +403,7 @@ Your own account's block is on `GET /v1/me`, with an extra `available` list nami
 
 ```bash
 curl --fail-with-body --silent --show-error 'https://api.openpath.sh/v1/me/domains' \
-  -H "Authorization: Bearer ${ADS_AGENT_TOKEN}" \
+  -H "Authorization: Bearer ${OPENPATH_AGENT_TOKEN}" \
   -H 'Content-Type: application/json' \
   --data-binary '{"domain": "example.com"}'
 ```
@@ -424,7 +414,7 @@ curl --fail-with-body --silent --show-error 'https://api.openpath.sh/v1/me/domai
 {
   "domain": "example.com",
   "status": "pending",
-  "record": {"type": "TXT", "name": "_ads-verification.example.com", "value": "ads-verification=0f3a2c9d8e7b6a5f4e3d2c1b0a998877"},
+  "record": {"type": "TXT", "name": "_openpath-verification.example.com", "value": "openpath-verification=0f3a2c9d8e7b6a5f4e3d2c1b0a998877"},
   "expires_at": null
 }
 ```
