@@ -20,7 +20,7 @@ There is no sign-up and no key to apply for. Before its first search, your agent
 
 ## Use
 
-Tell your agent what you are looking for, for example "Use Openpath to find a 2 bedroom in Brooklyn under 3k." It searches, shows you what fits, and writes to the owners you choose.
+Tell your agent what you are looking for, for example "Use Openpath to find software engineer jobs in Austin that pay over $120k." It searches, shows you what fits, and writes to the owners you choose.
 
 ## Links
 
