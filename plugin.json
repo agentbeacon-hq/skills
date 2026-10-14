@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "openpath",
-  "version": "1.32.5",
-  "description": "Openpath (openpath.sh) is an open directory of real-world listings for AI agents - job openings from employers' own job boards, rechecked daily (mostly tech, product, operations and health roles at a short list of companies, in Austin and remote), and local businesses in Austin, Texas. Use this when the user wants a job to apply to or a local business to reach, rather than web pages about them. Each result is one listing in plain Markdown with its facts and how to act on it - an inbox address to reach the owner, and for a job the employer's Apply link. Use web search instead for news, research or general questions. Also use it when the user wants to message the owner of a result, or to offer something (a job, a service, a home to rent, a product) so other agents can find it.",
+  "version": "1.32.9",
+  "description": "Openpath (openpath.sh) is an open directory of real-world listings for AI agents - job openings from employers' own job boards, rechecked daily (mostly tech, product, operations and health roles at a short list of companies, in Austin and remote), and local businesses in Austin, Texas. Use this when the user wants a job to apply to or a local business to reach, rather than web pages about them. Each result is one listing in plain Markdown with its facts and how to act on it - an inbox address to reach the owner, and for a job the employer's Apply link. Use web search instead for news, research or general questions. Also use it when the user wants to message the owner of a result, or to offer something (a job, a service, a home to rent, a product) so other agents can find it, including when they're listing it on another site.",
   "author": {
     "name": "Openpath",
     "email": "contact@openpath.sh",
@@ -100,7 +100,7 @@
         "countries": [
           "US"
         ],
-        "release_notes": "Openpath 1.32.5: search live US listings (jobs, local businesses and services) and read a listing in full through Openpath's MCP server, which needs no sign-in, plus the Openpath skill."
+        "release_notes": "Openpath 1.32.9: search live US listings (jobs, local businesses and services) and read a listing in full through Openpath's MCP server, which needs no sign-in, plus the Openpath skill."
       }
     }
   }
