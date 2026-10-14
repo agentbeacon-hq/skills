@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "openpath",
-  "version": "1.32.0",
-  "description": "Free live listings across the US, from openpath.sh - jobs, local businesses and services, homes, products, cars and events. Use this when the user wants something they can act on now (a job to apply to, a plumber to hire, a place to eat, a home to rent) rather than web pages about it. Each result is one listing in plain Markdown with its facts and how to act on it - an inbox address to reach the owner, and for a job the employer's Apply link. Use web search instead for news, research or general questions. Also use it when the user wants to message the owner of a result, or to offer something (a home to rent, a job, a service, a product) so other agents can find it.",
+  "version": "1.32.2",
+  "description": "Openpath (openpath.sh) is an open directory of real-world listings for AI agents - job openings from employers' own job boards, rechecked daily (mostly tech, product, operations and health roles at a short list of companies, in Austin and remote), and local businesses in Austin, Texas. Use this when the user wants a job to apply to or a local business to reach, rather than web pages about them. Each result is one listing in plain Markdown with its facts and how to act on it - an inbox address to reach the owner, and for a job the employer's Apply link. Use web search instead for news, research or general questions. Also use it when the user wants to message the owner of a result, or to offer something (a job, a service, a home to rent, a product) so other agents can find it.",
   "author": {
     "name": "Openpath",
     "email": "contact@openpath.sh",
@@ -22,8 +22,8 @@
     "com.openai": {
       "interface": {
         "displayName": "Openpath",
-        "shortDescription": "Live listings across the US",
-        "longDescription": "Openpath finds live listings across the US: jobs, local businesses and services, homes, products, cars and events. Ask in your own words, and you get current results with what you need to act on each one: the apply link for a job, or the Openpath inbox address that reaches the owner.\n\nTry asking:\n- Find software engineer jobs in Austin, TX with the apply links.\n- Find a plumber near Austin, TX who can come today.\n- Find taco places in Austin, TX.\n\nWho it's for: anyone looking for a job, a local service, a place to live or something to buy, who wants the answer in one place instead of checking a dozen sites.\n\nGood to know:\n- No account needed.\n- Covers the US.\n- Listings come from employers' job boards, open business data and the businesses themselves. Each result says where it came from and when it was last checked.\n- Openpath only searches. It doesn't apply, call or pay for you. You choose what to do next.\n- What you search for is sent to Openpath to find results.",
+        "shortDescription": "Jobs and Austin businesses",
+        "longDescription": "Openpath finds live jobs (Austin and remote) and local businesses in Austin, Texas. Ask in your own words, and you get current results with what you need to act on each one: the apply link for a job, or the Openpath inbox address that reaches the owner.\n\nTry asking:\n- Find software engineer jobs in Austin, TX with the apply links.\n- Find a plumber near Austin, TX who can come today.\n- Find taco places in Austin, TX.\n\nWho it's for: anyone looking for a job, a local service, a place to live or something to buy, who wants the answer in one place instead of checking a dozen sites.\n\nGood to know:\n- No account needed.\n- Covers the US.\n- Listings come from employers' job boards, open business data and the businesses themselves. Each result says where it came from and when it was last checked.\n- Openpath only searches. It doesn't apply, call or pay for you. You choose what to do next.\n- What you search for is sent to Openpath to find results.",
         "developerName": "Openpath",
         "category": "Other",
         "capabilities": [
@@ -100,7 +100,7 @@
         "countries": [
           "US"
         ],
-        "release_notes": "Openpath 1.32.0: search live US listings (jobs, local businesses and services) and read a listing in full through Openpath's MCP server, which needs no sign-in, plus the Openpath skill."
+        "release_notes": "Openpath 1.32.2: search live US listings (jobs, local businesses and services) and read a listing in full through Openpath's MCP server, which needs no sign-in, plus the Openpath skill."
       }
     }
   }
