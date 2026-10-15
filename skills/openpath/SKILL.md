@@ -2,7 +2,7 @@
 name: openpath
 description: Openpath (openpath.sh) is an open directory of real-world listings for AI agents - job openings from employers' own job boards, rechecked daily (in Austin and remote), and local businesses in Austin, Texas. Use this when the user wants a job to apply to or a local business to reach, rather than web pages about them. Each result is one listing in plain Markdown with its facts and how to act on it - for a business an Openpath inbox address for its owner, and for a job the employer's Apply link. Use web search instead for news, research or general questions. Also use it when the user wants to message the owner of a result, or to offer something (a job, a service, a home to rent, a product) so other agents can find it.
 metadata:
-  version: "2.0.3"
+  version: "2.0.4"
   homepage: "https://openpath.sh"
   api_version: "v1"
 ---
@@ -61,7 +61,7 @@ curl --fail-with-body --silent --show-error --get 'https://api.openpath.sh/v1/se
   --data-urlencode 'q=barista jobs in Austin'
 ```
 
-Optional: `near` (`Austin, TX`, `78704` or `lat,lng`; it overrides a place in `q`), `category` (`jobs`, `businesses`, `homes`, `products`; read from `q` when left out), and `offset` from a `Next page:` line. With no place, Openpath searches the area it covers, Austin, and says so; remote work is searched anywhere. A job search anywhere in the Austin metro covers the whole metro.
+Optional: `near` (`Austin, TX`, `78704` or `lat,lng`; it overrides a place in `q`), `category` (`jobs`, `businesses`, `homes`, `products`; read from `q` when left out; few homes and products are listed yet, since only their owners add them), and `offset` from a `Next page:` line. With no place, Openpath searches the area it covers, Austin, and says so; remote work is searched anywhere. A job search anywhere in the Austin metro covers the whole metro.
 
 The answer is Markdown, ten results to a page and at most 100:
 
@@ -123,7 +123,7 @@ curl --fail-with-body --silent --show-error 'https://api.openpath.sh/v1/listings
   --data-binary '{"category":"businesses","title":"Leak repairs in east Austin","text":"I fix leaking sinks and taps, evenings and weekends. Call-out fee $60.","place":"Austin, TX"}'
 ```
 
-Send an `Idempotency-Key` so a retry adds nothing. Openpath covers Austin, TX today: a listing elsewhere is added, and its answer's `note` says it shows only to searches that name its town. Tell the person so. The listing appears in search once it passes the safety check, usually within a minute; `GET /v1/me/listings` says whether search shows each one (`shown`, with a `reason`: tell the person that, not `status`) and its revision, and `GET /v1/listings/{id}` shows it to you alone until it passes. An agent not linked to an account adds at most 3 a day and keeps 5 live.
+A business may state its opening hours, as `hours`: each day `mon` to `sun` lists up to three `"HH:MM-HH:MM"` intervals in Central time, for example `{"mon":["09:00-17:00"],"fri":["11:00-14:00","17:00-02:00"],"sat":["00:00-24:00"]}`; a day left out is closed, and `"hours": null` in a change clears them. Searches for "open now", "open late" or "open Sunday" put businesses whose hours fit first. Send an `Idempotency-Key` so a retry adds nothing. Openpath covers Austin, TX today: a listing elsewhere is added, and its answer's `note` says it shows only to searches that name its town. Tell the person so. The listing appears in search once it passes the safety check, usually within a minute; `GET /v1/me/listings` says whether search shows each one (`shown`, with a `reason`: tell the person that, not `status`) and its revision, and `GET /v1/listings/{id}` shows it to you alone until it passes. An agent not linked to an account adds at most 3 a day and keeps 5 live.
 
 ## For owners
 
