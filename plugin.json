@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "openpath",
-  "version": "2.0.0",
-  "description": "Live jobs (Austin and remote) from employers' own job boards, and local businesses in Austin, Texas. Search in plain words with no sign-in; each result has the employer's Apply link or the Openpath inbox address that reaches the owner.",
+  "version": "2.0.3",
+  "description": "Live jobs (Austin and remote) from employers' own job boards, and local businesses in Austin, Texas. Search in plain words with no sign-in; each result has the employer's Apply link or an Openpath inbox address for its owner.",
   "author": {
     "name": "Openpath",
     "email": "contact@openpath.sh",
@@ -23,7 +23,7 @@
       "interface": {
         "displayName": "Openpath",
         "shortDescription": "Jobs and Austin businesses",
-        "longDescription": "Openpath finds live job openings (in Austin and remote) and local businesses in Austin, Texas. Ask in your own words, and you get current listings with what you need to act on each one: the employer's Apply link for a job, or the Openpath inbox address that reaches a business.\n\nTry asking:\n- Find software engineer jobs in Austin, TX with the apply links.\n- Find a plumber near Austin, TX.\n- Find taco places in Austin, TX.\n\nWho it's for: anyone looking for a job in Austin or a remote one, or a local business in Austin, who wants current listings in one place instead of checking a dozen sites.\n\nGood to know:\n- No account needed.\n- Jobs: Austin and remote. Businesses: Austin, Texas.\n- Jobs come from employers' own job boards and are rechecked daily; businesses come from open business data. Each result says where it came from and when it was last checked.\n- Results show no phone numbers, emails or websites. A business is reached through its Openpath inbox address; a job through the employer's Apply link.\n- Openpath only searches. It doesn't apply, message or pay for you. You choose what to do next.\n- What you search for is sent to Openpath to find results.",
+        "longDescription": "Openpath finds live job openings (in Austin and remote) and local businesses in Austin, Texas. Ask in your own words, and you get current listings with what you need to act on each one: the employer's Apply link for a job, or an Openpath inbox address for a business's owner.\n\nTry asking:\n- Find software engineer jobs in Austin, TX with the apply links.\n- Find a plumber near Austin, TX.\n- Find taco places in Austin, TX.\n\nWho it's for: anyone looking for a job in Austin or a remote one, or a local business in Austin, who wants current listings in one place instead of checking a dozen sites.\n\nGood to know:\n- No account needed.\n- Jobs: Austin and remote. Businesses: in and around Austin, Texas.\n- Jobs come from employers' own job boards and are rechecked daily; businesses come from open business data. Each result says where it came from and when it was last checked.\n- Results show no phone numbers, emails or websites. A job is acted on through the employer's Apply link; a business has an Openpath inbox address for its owner. Owners who haven't joined Openpath aren't notified yet.\n- Openpath only searches. It doesn't apply, message or pay for you. You choose what to do next.\n- What you search for is sent to Openpath to find results.",
         "developerName": "Openpath",
         "category": "Productivity",
         "capabilities": [
@@ -100,7 +100,7 @@
         "countries": [
           "US"
         ],
-        "release_notes": "Openpath 2.0.0: search live jobs (Austin and remote) and Austin local businesses, and read a listing in full, through Openpath's MCP server, which needs no sign-in. Businesses are reached only through their Openpath inbox."
+        "release_notes": "Openpath 2.0.3: search live jobs (Austin and remote) and Austin local businesses, and read a listing in full, through Openpath's MCP server, which needs no sign-in. Each result has the employer's Apply link or an Openpath inbox address for its owner."
       }
     }
   }

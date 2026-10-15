@@ -1,7 +1,7 @@
 {
   "name": "openpath",
-  "version": "2.0.0",
-  "description": "Live jobs (Austin and remote) and local businesses in Austin, Texas. Search with no sign-in, then apply to a job or reach an owner through their Openpath inbox.",
+  "version": "2.0.3",
+  "description": "Live jobs (Austin and remote) and local businesses in Austin, Texas. Search with no sign-in; each result has the employer's Apply link or an Openpath inbox for its owner.",
   "mcpServers": {
     "openpath": {
       "httpUrl": "https://openpath.sh/mcp/search"
