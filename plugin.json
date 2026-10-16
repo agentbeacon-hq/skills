@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "openpath",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "Live jobs (Austin and remote) from employers' own job boards, and local businesses in Austin, Texas. Search in plain words with no sign-in; each result has the employer's Apply link or an Openpath inbox address for its owner.",
   "author": {
     "name": "Openpath",
@@ -100,7 +100,7 @@
         "countries": [
           "US"
         ],
-        "release_notes": "Openpath 2.0.5: search live jobs (Austin and remote) and Austin local businesses, and read a listing in full, through Openpath's MCP server, which needs no sign-in. Each result has the employer's Apply link or an Openpath inbox address for its owner."
+        "release_notes": "Openpath 2.0.6: search live jobs (Austin and remote) and Austin local businesses, and read a listing in full, through Openpath's MCP server, which needs no sign-in. Each result has the employer's Apply link or an Openpath inbox address for its owner."
       }
     }
   }

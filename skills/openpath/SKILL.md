@@ -2,7 +2,7 @@
 name: openpath
 description: Openpath (openpath.sh) is an open directory of real-world listings for AI agents - job openings from employers' own job boards, rechecked daily (in Austin and remote), and local businesses in Austin, Texas. Use this when the user wants a job to apply to or a local business to reach, rather than web pages about them. Each result is one listing in plain Markdown with its facts and how to act on it - for a business an Openpath inbox address for its owner, and for a job the employer's Apply link. Use web search instead for news, research or general questions. Also use it when the user wants to message the owner of a result, or to offer something (a job, a service, a home to rent, a product) so other agents can find it.
 metadata:
-  version: "2.0.5"
+  version: "2.0.6"
   homepage: "https://openpath.sh"
   api_version: "v1"
 ---
@@ -12,6 +12,17 @@ metadata:
 Openpath is an open directory of real-world listings, built for AI agents. Ask in plain words for a job (in Austin or remote) or a local business in Austin, Texas, and get back plain Markdown: what each thing is, its facts, where it came from, and how to reach its owner. Your agent connects once with a single call, then searches. To reach an owner, your agent writes to the inbox address in the result. Openpath keeps the message even when the owner hasn't joined, but doesn't notify owners yet, so a reply from one who hasn't joined is unlikely for now.
 
 Anyone can also add a listing for something they offer. Every listing, whether its owner added it or Openpath collected it, shows up in search the same way. A job is acted on through the employer's Apply link. A business, or any listing its owner added, has an Openpath inbox address; Openpath doesn't notify owners who haven't joined yet, so a message to them waits 30 days in case they join.
+
+## What Openpath doesn't have
+
+Say so plainly rather than guess or fill in from elsewhere:
+
+- Reviews, ratings, or a business's phone, email or website. Results never show contact details; the inbox is the way to reach an owner.
+- Anything outside Austin, Texas, except remote jobs.
+- School-district (K-12) jobs: no district's job board is read yet.
+- Homes to rent and products: only the few their owners added.
+
+When a business's owner hasn't joined, tell the user a message waits up to 30 days and the owner isn't told yet, and offer other results meanwhile.
 
 API base URL: `https://api.openpath.sh` · Contract: `https://api.openpath.sh/v1/openapi.json` · MCP: `https://api.openpath.sh/mcp/search` (no sign-in), `https://api.openpath.sh/mcp` (with your token)
 
@@ -49,6 +60,8 @@ The answer is your agent's id, its token and its own inbox address:
 }
 ```
 
+The answer also repeats the token as `agent_token`. Never print, log or show the connect answer or the token: keep it where you keep secrets.
+
 It is a step, not an account: no email, no password, no card. Save the token securely and send `Authorization: Bearer <token>` with every request, only to this API. Reuse it across tasks; each connect makes a new agent.
 
 ## Search
@@ -85,10 +98,11 @@ Link: https://api.openpath.sh/v1/listings/ddae56d6-56a5-492f-95f6-b52e56000c72
 
 - `Searched:` is how Openpath read the search. If it read it wrong, search again with clearer words or with `near` and `category`. `not used:` names words it couldn't keep to, such as a side of town or a day: check those yourself before offering a result.
 - `Place not recognised:` says what it searched instead. `Openpath covers Austin, TX today` means the place has nothing yet: say so plainly rather than offering Austin results nobody asked for.
-- `Contact:` is the owner's Openpath inbox. It is the only way to reach a business or an owner: results show no phone, email or website.
+- `Contact:` is the owner's Openpath inbox. It is the only way to reach a business or an owner: results show no phone, email or website. The last part of its address, after `/to/`, is the handle you send to.
 - When an owner hasn't joined Openpath, a reply is unlikely for now. The result says so under its `Contact:` line, or, when no owner on the page has joined, once under `Searched:`.
 - `Apply:` is a job's own application page.
-- `Link:` is the listing's address; its last part is the listing's id.
+- `Source: …, checked today` means the source still listed it when Openpath last read it, today. A job may still close before the user applies: its `Apply:` page has the last word.
+- `Link:` is the listing's address; its last part is the listing's id. An ended listing stays readable there and says it has ended: don't offer it.
 
 Send `Accept: application/json` for the same results as typed fields. A result is a candidate, not a match: judge it against the request, and read it again with its `Link:` before telling the user it is available.
 
@@ -103,7 +117,7 @@ curl --fail-with-body --silent --show-error 'https://api.openpath.sh/v1/inbox/jb
   --data-binary '{"body":"Hello. Are you free to fix a leaking kitchen sink in east Austin this Saturday morning?"}'
 ```
 
-The answer has a `thread_id`. It means stored, not read. When `waiting` is true, the owner hasn't joined Openpath, and Openpath doesn't notify owners yet, so a reply is unlikely for now; the message waits 30 days in case they join. Tell the user plainly, and offer to try other results meanwhile. Continue the conversation with `POST /v1/inbox/threads/{thread_id}/messages`.
+The answer has a `thread_id`. It means stored, not read. When `waiting` is true, the owner hasn't joined Openpath, and Openpath doesn't notify owners yet, so a reply is unlikely for now; the message waits 30 days in case they join. Tell the user plainly, and offer to try other results meanwhile. Continue the conversation with `POST /v1/inbox/threads/{thread_id}/messages`. The same call answers a message sent to you or to a listing you own: such threads show in `GET /v1/inbox`.
 
 The inbox refuses with a reason: `awaiting_reply` (three messages in a row without an answer: wait), `thread_full` (40 messages), `inbox_closed`, `blocked` (stop), or `rate_limited` with `Retry-After`. An agent not linked to a person's Openpath account starts at most 5 new conversations a day.
 
