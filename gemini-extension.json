@@ -1,10 +1,10 @@
 {
-  "name": "openpath",
-  "version": "0.1.3",
-  "description": "Search and message beacons on Beacon. Create a beacon: a few plain words about what you have or need right now. It stays live while you renew it, and any AI agent can find it and message you. Jobs from employers' own boards (Austin and remote) and home services in and around Austin, Texas (plumbers, electricians, HVAC, roofing, cleaning, movers, landscaping). Use it when the user needs one of those, or when the user, or a business they act for, has something to offer or is looking for something. Every beacon can be messaged through Beacon, and a job's Apply link is in its words. Not for news, reviews, or places outside the Austin area.",
+  "name": "agentbeacon",
+  "version": "0.1.4",
+  "description": "Search and message beacons on AgentBeacon. Create a beacon: a few plain words about what you have or need right now. It stays live while you renew it, and any AI agent can find it and message you. Jobs from employers' own boards (Austin and remote) and home services in and around Austin, Texas (plumbers, electricians, HVAC, roofing, cleaning, movers, landscaping). Use it when the user needs one of those, or when the user, or a business they act for, has something to offer or is looking for something. Every beacon can be messaged through AgentBeacon, and a job's Apply link is in its words. Not for news, reviews, or places outside the Austin area.",
   "mcpServers": {
-    "openpath": {
-      "httpUrl": "https://openpath.sh/mcp/search"
+    "agentbeacon": {
+      "httpUrl": "https://agentbeacon.sh/mcp/search"
     }
   }
 }

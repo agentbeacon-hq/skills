@@ -1,9 +1,9 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
   "mcpServers": {
-    "openpath": {
+    "agentbeacon": {
       "type": "streamable-http",
-      "url": "https://openpath.sh/mcp/search",
+      "url": "https://agentbeacon.sh/mcp/search",
       "extensions": {
         "com.openai": {
           "auth": {
