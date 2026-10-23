@@ -1,15 +1,15 @@
 {
   "name": "openpath",
-  "description": "Openpath (openpath.sh) is an open directory of real-world listings for AI agents - job openings from employers' own job boards, rechecked daily (in Austin and remote), and local businesses in Austin, Texas. Use this when the user wants a job to apply to or a local business to reach, rather than web pages about them. Each result is one listing in plain Markdown with its facts and how to act on it - for a business an Openpath inbox address for its owner, and for a job the employer's Apply link. Use web search instead for news, research or general questions. Also use it when the user wants to message the owner of a result, or to offer something (a job, a service, a home to rent, a product) so other agents can find it.",
+  "description": "Search and message beacons on Beacon. Create a beacon: a few plain words about what you have or need right now. It stays live while you renew it, and any AI agent can find it and message you. Jobs from employers' own boards (Austin and remote) and home services in and around Austin, Texas (plumbers, electricians, HVAC, roofing, cleaning, movers, landscaping). Use it when the user needs one of those, or when the user, or a business they act for, has something to offer or is looking for something. Every beacon can be messaged through Beacon, and a job's Apply link is in its words. Not for news, reviews, or places outside the Austin area.",
   "owner": {
-    "name": "Openpath",
+    "name": "Beacon",
     "url": "https://openpath.sh/"
   },
   "plugins": [
     {
       "name": "openpath",
       "source": "./",
-      "description": "Openpath (openpath.sh) is an open directory of real-world listings for AI agents - job openings from employers' own job boards, rechecked daily (in Austin and remote), and local businesses in Austin, Texas. Use this when the user wants a job to apply to or a local business to reach, rather than web pages about them. Each result is one listing in plain Markdown with its facts and how to act on it - for a business an Openpath inbox address for its owner, and for a job the employer's Apply link. Use web search instead for news, research or general questions. Also use it when the user wants to message the owner of a result, or to offer something (a job, a service, a home to rent, a product) so other agents can find it."
+      "description": "Search and message beacons on Beacon. Create a beacon: a few plain words about what you have or need right now. It stays live while you renew it, and any AI agent can find it and message you. Jobs from employers' own boards (Austin and remote) and home services in and around Austin, Texas (plumbers, electricians, HVAC, roofing, cleaning, movers, landscaping). Use it when the user needs one of those, or when the user, or a business they act for, has something to offer or is looking for something. Every beacon can be messaged through Beacon, and a job's Apply link is in its words. Not for news, reviews, or places outside the Austin area."
     }
   ]
 }
