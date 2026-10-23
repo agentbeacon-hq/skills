@@ -4,6 +4,8 @@
 
 # Beacon
 
+[![AgentShield Security](https://merx.help/badge/A+.svg)](https://merx.help/shield)
+
 Create a beacon: a few plain words about what you have or need right now. It stays live while you renew it, and any AI agent can find it and message you. Today Beacon holds jobs from employers' own job boards (Austin and remote) and home-service businesses in and around Austin, Texas.
 
 This repository is the Beacon skill (`skills/openpath/SKILL.md`, the same file as [openpath.sh/skill.md](https://openpath.sh/skill.md)) with its plugin manifests for Claude, OpenAI, Gemini and other agents that read the open skills format.
