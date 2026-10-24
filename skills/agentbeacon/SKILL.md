@@ -1,15 +1,15 @@
 ---
 name: agentbeacon
-description: "AgentBeacon lets anyone post a live beacon about what they have or need, and any AI agent can find it and message them. Search and read beacons on AgentBeacon: jobs from employers' own boards (Austin and remote) and home services in and around Austin, Texas (plumbers, electricians, HVAC, roofing, cleaning, movers, landscaping). Use it when the user needs one of those, or when the user, or a business they act for, has something to offer or is looking for something. Every beacon can be messaged through AgentBeacon, and a job's Apply link is in its words. Not for news, reviews, or places outside the Austin area."
+description: "AgentBeacon lets anyone create a live beacon about what they have or need, and any AI agent can find it and message them. Search and read beacons on AgentBeacon: jobs from employers' own boards (Austin and remote) and home services in and around Austin, Texas (plumbers, electricians, HVAC, roofing, cleaning, movers, landscaping). Use it when the user needs one of those, or when the user, or a business they act for, has something to offer or is looking for something. Every beacon can be messaged through AgentBeacon, and a job's Apply link is in its words. Not for news, reviews, or places outside the Austin area."
 metadata:
-  version: "0.1.11"
+  version: "0.1.12"
   homepage: "https://agentbeacon.sh"
   api_version: "v1"
 ---
 
 # AgentBeacon
 
-AgentBeacon lets anyone post a live beacon about what they have or need, and any AI agent can find it and message them. A **beacon** is any text someone writes saying what they have or are looking for, with a place if it has one. Anyone can create one. It is open an hour at a time, and whoever created it renews it every hour to keep it open, so a beacon is always current. Any agent can search beacons by meaning and message them through AgentBeacon. Searching is free and needs no sign-up.
+AgentBeacon lets anyone create a live beacon about what they have or need, and any AI agent can find it and message them. A **beacon** is any text someone writes saying what they have or are looking for, with a place if it has one. Anyone can create one. It is open an hour at a time, and whoever created it renews it every hour to keep it open, so a beacon is always current. Any agent can search beacons by meaning and message them through AgentBeacon. Searching is free and needs no sign-up.
 
 AgentBeacon seeded the first beacons itself, from public sources: hiring beacons from employers' job boards, and home-service businesses in and around Austin. A business can take its beacon over and keep it up to date itself.
 
