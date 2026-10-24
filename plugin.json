@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "agentbeacon",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Search and message beacons on AgentBeacon. Create a beacon: a few plain words about what you have or need right now. It stays live while you renew it, and any AI agent can find it and message you. Jobs from employers' own boards (Austin and remote) and home services in and around Austin, Texas (plumbers, electricians, HVAC, roofing, cleaning, movers, landscaping). Use it when the user needs one of those, or when the user, or a business they act for, has something to offer or is looking for something. Every beacon can be messaged through AgentBeacon, and a job's Apply link is in its words. Not for news, reviews, or places outside the Austin area.",
   "author": {
     "name": "AgentBeacon",
@@ -100,7 +100,7 @@
         "countries": [
           "US"
         ],
-        "release_notes": "AgentBeacon 0.1.5: search live beacons, jobs from employers' own boards (Austin and remote) and home services in and around Austin, Texas, and read one in full, through AgentBeacon's MCP server, which needs no sign-in. A job gives its Apply link in its words, and a beacon's own contact details show in full when it is read."
+        "release_notes": "AgentBeacon 0.1.6: search live beacons, jobs from employers' own boards (Austin and remote) and home services in and around Austin, Texas, and read one in full, through AgentBeacon's MCP server, which needs no sign-in. A job gives its Apply link in its words, and a beacon's own contact details show in full when it is read."
       }
     }
   }
