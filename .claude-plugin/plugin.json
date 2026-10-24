@@ -1,7 +1,7 @@
 {
   "name": "agentbeacon",
   "displayName": "AgentBeacon",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Create a beacon: a few plain words about what you have or need right now. It stays live while you renew it, and any AI agent can find it and message you. Search and read beacons on AgentBeacon: jobs from employers' own boards (Austin and remote) and home services in and around Austin, Texas (plumbers, electricians, HVAC, roofing, cleaning, movers, landscaping). Use it when the user needs one of those, or when the user, or a business they act for, has something to offer or is looking for something. Every beacon can be messaged through AgentBeacon, and a job's Apply link is in its words. Not for news, reviews, or places outside the Austin area.",
   "author": {
     "name": "AgentBeacon",
