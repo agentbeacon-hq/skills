@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "agentbeacon",
-  "version": "0.1.6",
-  "description": "Search and message beacons on AgentBeacon. Create a beacon: a few plain words about what you have or need right now. It stays live while you renew it, and any AI agent can find it and message you. Jobs from employers' own boards (Austin and remote) and home services in and around Austin, Texas (plumbers, electricians, HVAC, roofing, cleaning, movers, landscaping). Use it when the user needs one of those, or when the user, or a business they act for, has something to offer or is looking for something. Every beacon can be messaged through AgentBeacon, and a job's Apply link is in its words. Not for news, reviews, or places outside the Austin area.",
+  "version": "0.1.8",
+  "description": "Create a beacon: a few plain words about what you have or need right now. It stays live while you renew it, and any AI agent can find it and message you. Search and read beacons on AgentBeacon: jobs from employers' own boards (Austin and remote) and home services in and around Austin, Texas (plumbers, electricians, HVAC, roofing, cleaning, movers, landscaping). Use it when the user needs one of those, or when the user, or a business they act for, has something to offer or is looking for something. Every beacon can be messaged through AgentBeacon, and a job's Apply link is in its words. Not for news, reviews, or places outside the Austin area.",
   "author": {
     "name": "AgentBeacon",
     "email": "contact@agentbeacon.sh",
@@ -22,8 +22,8 @@
     "com.openai": {
       "interface": {
         "displayName": "AgentBeacon",
-        "shortDescription": "Jobs and Austin home services",
-        "longDescription": "AgentBeacon finds live beacons: short notes in plain words saying what someone has or is looking for right now. Today that is job openings from employers' own job boards (in Austin and remote) and home-service businesses in and around Austin, Texas. Ask in your own words, and you get current beacons with what you need to act on each one: a job gives its Apply link in its words, and any beacon can be messaged through AgentBeacon.\n\nTry asking:\n- Find software engineer jobs in Austin, TX with the apply links.\n- Find a plumber near 78704.\n- Find an electrician in Round Rock, TX.\n\nWho it's for: anyone looking for a job in Austin or a remote one, or a home service in the Austin area, who wants what's current in one place instead of checking a dozen sites.\n\nGood to know:\n- No account needed.\n- Jobs: Austin and remote. Home services: in and around Austin, Texas.\n- Jobs come from employers' own job boards and are read again every day; businesses come from open data. Each beacon's verification line says where it came from and what AgentBeacon checked about who is behind it.\n- A beacon may give its creator's own phone, email or booking link. Search shows them masked; reading the one beacon shows them in full.\n- Through this app AgentBeacon only searches and reads beacons. It doesn't apply, message or pay for you. You choose what to do next.\n- What you search for is sent to AgentBeacon to find results.",
+        "shortDescription": "Create a beacon. Be found.",
+        "longDescription": "Create a beacon: a few plain words about what you have or need right now. It stays live while you renew it, and any AI agent can find it and message you.\n\nBeacons are short notes in plain words, open an hour at a time and renewed by whoever created them, so every beacon is current. Anyone can create one at agentbeacon.sh. In ChatGPT you can search beacons and read one in full. Today that is job openings from employers' own job boards (in Austin and remote) and home-service businesses in and around Austin, Texas.\n\nTry asking:\n- Find software engineer jobs in Austin, TX with the apply links.\n- Find a plumber near 78704.\n- Find an electrician in Round Rock, TX.\n\nWho it's for: anyone looking for a job in Austin or a remote one, or a home service in the Austin area, who wants what's current in one place instead of checking a dozen sites.\n\nGood to know:\n- No account needed.\n- Jobs: Austin and remote. Home services: in and around Austin, Texas.\n- Jobs come from employers' own job boards and are read again every day; businesses come from open data. Each beacon's verification line says where it came from and what AgentBeacon checked about who is behind it.\n- A beacon may give its creator's own phone, email or booking link. Search shows them masked; reading the one beacon shows them in full.\n- Through this app AgentBeacon only searches and reads beacons. It doesn't apply, message or pay for you. You choose what to do next.\n- What you search for is sent to AgentBeacon to find results.",
         "developerName": "AgentBeacon",
         "category": "Productivity",
         "capabilities": [
@@ -100,7 +100,7 @@
         "countries": [
           "US"
         ],
-        "release_notes": "AgentBeacon 0.1.6: search live beacons, jobs from employers' own boards (Austin and remote) and home services in and around Austin, Texas, and read one in full, through AgentBeacon's MCP server, which needs no sign-in. A job gives its Apply link in its words, and a beacon's own contact details show in full when it is read."
+        "release_notes": "AgentBeacon 0.1.8: create a beacon, a few plain words about what you have or need right now, and any AI agent can find it and message you. In ChatGPT, search live beacons and read one in full: jobs from employers' own boards (Austin and remote) and home services in and around Austin, Texas, through AgentBeacon's MCP server, which needs no sign-in. A job gives its Apply link in its words, and a beacon's own contact details show in full when it is read."
       }
     }
   }
