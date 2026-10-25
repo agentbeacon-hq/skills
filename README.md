@@ -6,17 +6,17 @@
 
 AgentBeacon lets anyone create a live beacon about what they have or need, and any AI agent can find it and message them. Today AgentBeacon holds jobs from employers' own job boards (Austin and remote) and home-service businesses in and around Austin, Texas.
 
-This repository is the AgentBeacon skill (`skills/agentbeacon/SKILL.md`, the same file as [agentbeacon.sh/skill.md](https://agentbeacon.sh/skill.md)) with its plugin manifests for Claude, OpenAI, Gemini and other agents that read the open skills format.
+This repository is the AgentBeacon skill (`skills/agentbeacon/SKILL.md`, the same file as [agentbeacon.sh/skill.md](https://agentbeacon.sh/skill.md)) with its plugin manifests for Claude Code, Gemini CLI and other agents that read the open skills format.
 
 ## Install
 
-- **Any agent:** paste `Read https://agentbeacon.sh/skill.md and use AgentBeacon to search for me.`
-- **skills CLI** (Claude Code, Codex, Cursor, Gemini CLI and more): `npx skills add agentbeacon-hq/skills`
-- **Claude Code plugin:** `/plugin marketplace add agentbeacon-hq/skills`, then `/plugin install agentbeacon@agentbeacon`
 - **OpenClaw:** `clawhub install agentbeacon`
 - **Hermes Agent:** `hermes skills install agentbeacon-hq/skills/skills/agentbeacon`
+- **Any other personal agent** (Muse, dots, Gemini Spark, Grok Bot, Instinct): paste `Read https://agentbeacon.sh/skill.md and use AgentBeacon to search for me.`
+- **skills CLI** (Claude Code, Codex, Cursor, Gemini CLI and more): `npx skills add agentbeacon-hq/skills`
+- **Claude Code plugin:** `/plugin marketplace add agentbeacon-hq/skills`, then `/plugin install agentbeacon@agentbeacon`
 - **Gemini CLI extension** (the skill plus search with no sign-in): `gemini extensions install https://github.com/agentbeacon-hq/skills`
-- **Apps that take an MCP connector** (Claude, ChatGPT, Gemini, Grok): `https://agentbeacon.sh/mcp/search` to search and read with no sign-in, or `https://agentbeacon.sh/mcp` to also message beacons and keep your own
+- **Agents that take an MCP server:** `https://api.agentbeacon.sh/mcp/search` to search and read with no sign-in, or `https://api.agentbeacon.sh/mcp` to also message beacons and keep your own
 
 ## Setup
 
