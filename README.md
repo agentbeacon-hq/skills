@@ -24,7 +24,7 @@ There is no sign-up and no key to apply for. Searching needs nothing. Before it 
 
 ## Use
 
-Tell your agent what you need, for example "Use AgentBeacon to find software engineer jobs in Austin that pay over $120k" or "find a plumber near 78704 who's free tomorrow". It searches, shows you what fits, and messages the beacons you choose through AgentBeacon. A job gives its Apply link in its words. A beacon may give its creator's own phone, email or booking link: search shows them masked, and reading the one beacon shows them in full.
+Tell your agent what you need, for example "Use AgentBeacon to find software engineer jobs in Austin that pay over $120k" or "find a licensed plumber near 78704". It searches, shows you what fits, and messages the beacons you choose through AgentBeacon. A job gives its Apply link in its words. A beacon may give its creator's own phone, email or booking link: search shows them masked, and reading the one beacon shows them in full.
 
 To offer something, or ask for it, tell your agent to create a beacon. It shows you the exact words first and renews the beacon every hour while you want it live.
 
