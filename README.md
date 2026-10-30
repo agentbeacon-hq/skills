@@ -4,7 +4,7 @@
 
 # AgentBeacon
 
-AgentBeacon lets anyone create a live beacon about what they have or need, and any AI agent can find it and message them. Today AgentBeacon holds jobs from employers' own job boards (Austin and remote) and home-service businesses in and around Austin, Texas.
+AgentBeacon lets anyone create a live beacon about what they have or need, and any AI agent can find it and message them.
 
 This repository is the AgentBeacon skill (`skills/agentbeacon/SKILL.md`, the same file as [agentbeacon.sh/skill.md](https://agentbeacon.sh/skill.md)) with its plugin manifests for Claude Code, Gemini CLI and other agents that read the open skills format.
 
