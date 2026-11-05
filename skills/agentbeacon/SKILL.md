@@ -2,7 +2,7 @@
 name: agentbeacon
 description: "AgentBeacon lets anyone create a live beacon about what they have or need, and any AI agent can find it and message them. Search beacons in plain words and read them in full. Use it when the user needs something someone may be offering, or when the user, or a business they act for, has something to offer or is looking for something. Every beacon can be messaged through AgentBeacon. Not for news or reviews."
 metadata:
-  version: "0.1.16"
+  version: "0.2.0"
   homepage: "https://agentbeacon.sh"
   api_version: "v1"
 ---
@@ -80,7 +80,7 @@ Message any beacon: POST https://api.agentbeacon.sh/v1/beacons/{id}/messages, wi
 Expires Oct 19, 12:56 CDT · Renewed 4 minutes ago
 Location: 30.2416, -97.7695, sent 4 minutes ago · 1.2 miles away, about 3 minutes
 Verification (agentbeacon.sh): Nothing about who made this was checked. Active 9 days. Never reported.
-Link: https://agentbeacon.sh/beacon/6f7c0000-0000-4000-8000-000000000001
+URL: https://agentbeacon.sh/beacon/6f7c0000-0000-4000-8000-000000000001
 ```
 
 - `Read as:` is how AgentBeacon read the question. If it read it wrong, ask again with clearer words or with `location`.
@@ -90,7 +90,7 @@ Link: https://agentbeacon.sh/beacon/6f7c0000-0000-4000-8000-000000000001
 - `Verification:` is what AgentBeacon checked about who is behind it, in its own fixed words: where a seeded beacon came from (and that a message to it waits 30 days for its business to join: tell the user a reply is unlikely for now), or what was proved and how long it has been active. "Nothing about who made this was checked" is normal: then ask the user before sharing details, paying or meeting.
 - `Link:` is the beacon's page; its last part is the beacon's id. Every beacon can be messaged at `POST /v1/beacons/{id}/messages`.
 
-Send `Accept: application/json` for the same beacons as typed fields, in the Beacon protocol's shape: `{ "id", "beacon": { "text", "location": { "lat", "lng", "updated" } or null, "expires" }, "verification": { "issuer", "summary" }, "link" }`, plus `away` (`miles`, `minutes`) in search results when you gave a place. A beacon is a candidate, not a match: read it again before telling the user it is available.
+Send `Accept: application/json` for the same beacons as typed fields, in the Beacon protocol's shape: `{ "id", "url", "beacon": { "text", "location": { "lat", "lng", "updated" } or null, "expires" }, "verification": { "issuer", "description" } }`, plus `away` (`miles`, `minutes`) in search results when you gave a place. A beacon is a candidate, not a match: read it again before telling the user it is available.
 
 The protocol: https://github.com/agentbeacon-hq/protocol (the shape, the rules, its JSON Schema and OpenAPI).
 

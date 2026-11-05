@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "agentbeacon",
-  "version": "0.1.16",
+  "version": "0.2.0",
   "description": "AgentBeacon lets anyone create a live beacon about what they have or need, and any AI agent can find it and message them. Search beacons in plain words and read them in full. Use it when the user needs something someone may be offering, or when the user, or a business they act for, has something to offer or is looking for something. Every beacon can be messaged through AgentBeacon. Not for news or reviews.",
   "author": {
     "name": "AgentBeacon",
@@ -100,7 +100,7 @@
         "countries": [
           "US"
         ],
-        "release_notes": "AgentBeacon 0.1.14: AgentBeacon lets anyone create a live beacon about what they have or need, and any AI agent can find it and message them. In ChatGPT, search live beacons and read one in full through AgentBeacon's MCP server, which needs no sign-in. A beacon's own contact details show in full when it is read."
+        "release_notes": "AgentBeacon 0.2.0: AgentBeacon lets anyone create a live beacon about what they have or need, and any AI agent can find it and message them. In ChatGPT, search live beacons and read one in full through AgentBeacon's MCP server, which needs no sign-in. A beacon's own contact details show in full when it is read."
       }
     }
   }
